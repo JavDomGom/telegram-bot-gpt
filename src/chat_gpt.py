@@ -8,7 +8,7 @@ import logging
 import openai
 
 from src.config import OPENAI_API_KEY, OPENAI_ENGINE, OPENAI_TEMPERATURE, OPENAI_MAX_TOKENS, OPENAI_TOP_P,\
-    OPENAI_FREQUENCY_PENALTY, OPENAI_PRESENCE_PENALTY
+    OPENAI_FREQUENCY_PENALTY, OPENAI_PRESENCE_PENALTY, OPENAI_FORMAT
 
 
 class ChatGpt:
@@ -27,6 +27,7 @@ class ChatGpt:
         self.top_p = OPENAI_TOP_P
         self.frequency_penalty = OPENAI_FREQUENCY_PENALTY
         self.presence_penalty = OPENAI_PRESENCE_PENALTY
+        self.format = OPENAI_FORMAT
 
     def get_response(self, message: str) -> str:
         """
@@ -42,7 +43,8 @@ class ChatGpt:
             max_tokens=self.max_tokens,
             top_p=self.top_p,
             frequency_penalty=self.frequency_penalty,
-            presence_penalty=self.presence_penalty
+            presence_penalty=self.presence_penalty,
+            format=self.format
         )
 
-        return response['choices'][0]['text']
+        return response['choices'][0].text

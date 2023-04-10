@@ -1,5 +1,6 @@
 ### Local files ###
 log/*
+src/config.py
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
