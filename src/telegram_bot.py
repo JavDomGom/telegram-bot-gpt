@@ -66,10 +66,11 @@ class TelegramBot:
                 if update.message.text == '/start':
                     response = f'Welcome {update.effective_user.first_name}!'
                 else:
-                    # Thank you Jose Selvi for this prompt!
-                    message = 'You are TestBot, a conversational AI that always answer joking.\n'\
+                    # Thank you, Jose Selvi, for this prompt!
+                    message = 'I am a User and you are BobbyBot, a conversational AI that always responds with ' \
+                              'respect and seriousness.\n'\
                               f'User: {update.message.text}\n'\
-                              'TestBot: '
+                              'BobbyBot: '
                     response = self.chat_gpt.get_response(message)
 
                 self.log.debug(f'response: {response}')
