@@ -60,13 +60,17 @@ class TelegramBot:
 
             # Your bot can receive updates without messages and not all messages contain text.
             if update.message and update.message.text:
-                self.log.info(f'Found message "{update.message.text}".')
                 self.log.debug(update.effective_user.to_dict())
+                self.log.info(f'Found message "{update.message.text}".')
 
                 if update.message.text == '/start':
                     response = f'Welcome {update.effective_user.first_name}!'
                 else:
-                    response = self.chat_gpt.get_response(update.message.text)
+                    # Thank you Jose Selvi for this prompt!
+                    message = 'You are TestBot, a conversational AI that always answer joking.\n'\
+                              f'User: {update.message.text}\n'\
+                              'TestBot: '
+                    response = self.chat_gpt.get_response(message)
 
                 self.log.debug(f'response: {response}')
 
