@@ -1,6 +1,6 @@
 """
 telegram-bot-gpt
-@author: JavDomGom
+@authors: JavDomGom
 """
 
 import logging
@@ -9,7 +9,7 @@ import asyncio
 
 from typing import NoReturn
 
-from telegram import Bot, User
+from telegram import Bot
 from telegram.error import Forbidden, NetworkError
 
 from src.config import TELEGRAM_API_TOKEN
@@ -73,9 +73,11 @@ class TelegramBot:
                               'BobbyBot: '
                     response = self.chat_gpt.get_response(message)
 
-                self.log.debug(f'response: {response}')
+                self.log.info(f'response: {response}')
 
                 # Reply to the message
                 await update.message.reply_text(response)
+
             return next_update_id
+
         return update_id

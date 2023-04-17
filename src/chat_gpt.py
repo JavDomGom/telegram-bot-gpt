@@ -1,6 +1,6 @@
 """
 telegram-bot-gpt
-@author: JavDomGom
+@authors: JavDomGom
 """
 
 import logging

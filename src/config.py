@@ -1,6 +1,6 @@
 """
 telegram-bot-gpt
-@author: JavDomGom
+@authors: JavDomGom
 """
 
 import os
@@ -13,9 +13,9 @@ LOG_FORMATTER = '{"time":"%(asctime)s", "level": "%(levelname)s", "message": "%(
 
 TELEGRAM_API_TOKEN = 'put-here-your-telegram-api-token'
 OPENAI_API_KEY = 'put-here-your-openai-api-key'
-OPENAI_ENGINE = 'text-davinci-002'
+OPENAI_ENGINE = 'text-davinci-003'
 OPENAI_TEMPERATURE = 0.3
-OPENAI_MAX_TOKENS = 256
+OPENAI_MAX_TOKENS = 512
 OPENAI_TOP_P = 1
 OPENAI_FREQUENCY_PENALTY = 0
 OPENAI_PRESENCE_PENALTY = 0
